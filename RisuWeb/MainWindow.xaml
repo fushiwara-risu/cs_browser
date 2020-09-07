@@ -1,17 +1,19 @@
 ﻿<Window x:Class="Risu_Web.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:html="clr-namespace:TheArtOfDev.HtmlRenderer.WPF;assembly=HtmlRenderer.WPF"
-        xmlns:agi="clr-namespace:HtmlAgilityPack;assembly=HtmlAgilityPack"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Risu_Web"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="RisuWeb" Height="450" Width="800">
     <Grid>
         <html:HtmlPanel x:Name="Site"
                         Background="Black" Margin="0,30,0,0">
-
         </html:HtmlPanel>
+        
+        <TextBlock x:Name="Search"
+                   Margin="0,30,120,374" Background="WhiteSmoke">
+        </TextBlock>
+        <Button Margin="680,30,0,374" Content="Search" Background="Gray" Click="Button_Click"></Button>
     </Grid>
 </Window>

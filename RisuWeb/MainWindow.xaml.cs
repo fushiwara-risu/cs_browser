@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using HtmlAgilityPack;
+using System.Xml;
+using System.Threading.Tasks;
 
 namespace Risu_Web
 {
@@ -11,10 +13,19 @@ namespace Risu_Web
         public MainWindow()
         {
             InitializeComponent();
+        }
 
-            var item = new HtmlDocument();
-            item.Load(@"E:\programming\challenge\cs_browser\dummy data\dummy_site.html");
-            Site.Text = item.Text;
+        private async Task ParseHTML(string search)
+        {
+            HtmlWeb web = new HtmlWeb();
+            HtmlDocument htmlDoc = await web.LoadFromWebAsync(search);
+
+            Site.Text = htmlDoc.Text;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ParseHTML(Search.Text);
         }
     }
 }
